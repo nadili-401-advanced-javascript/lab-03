@@ -5,12 +5,12 @@ const callbacks = require('./lib/callbacks.js');
 const promises = require('./lib/promises.js');
 const async = require('./lib/async-await.js');
 
-let file = `${__dirname}/data/file.txt`;
+let file = `__data__/person.json`;
 
 // A simple error first callback that regurgitates our file contents
 let showFileContents = (err,data) => {
   if(err) { throw err; }
-  console.log(data);
+  console.log('I\'m in index.js/showFileContents', data);
 };
 
 // Use our custom file reader instead of normal fs, so that we can change our interface to it ...
