@@ -5,11 +5,12 @@ const promises = require('./lib/promises.js');
 const async = require('./lib/async-await.js');
 
 // debug
-let file = `__data__/person.json`;
+//let file = `__data__/person.json`;
 
 // File from console input
-// let file = process.argv.slice(0);
-// console.log(files);
+let files = process.argv.slice(2, 3);
+let file = files[0];
+console.log(file);
 
 // A simple error first callback that regurgitates our file contents
 let showFileContents = (err,data) => {
