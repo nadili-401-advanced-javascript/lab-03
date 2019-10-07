@@ -8,8 +8,8 @@ const async = require('./lib/async-await.js');
 //let file = `__data__/person.json`;
 
 // File from console input
-let files = process.argv.slice(2, 3);
-let file = files[0];
+let args = process.argv.slice(2, 3);
+let file = args[0];
 console.log(file);
 
 // A simple error first callback that regurgitates our file contents
