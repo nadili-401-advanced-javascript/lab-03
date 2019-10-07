@@ -34,4 +34,4 @@ All three modules are updating JSON file content
 
 
 #### UML
-![ UML for the application and response to events](/assets/lab-03-uml.jpg)
+![ UML for the 'callbacks' part of the application ](/assets/lab-03-uml.jpg)
