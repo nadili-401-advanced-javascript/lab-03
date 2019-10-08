@@ -42,7 +42,9 @@ All three modules are updating JSON file content
   
 #### Tests
 * Unit Tests: 'npm test'
-* Lint Tests: 'npm run lint'
+* Lint Tests: 'npm run lint' 
+
+(!!!NOTE!!! - async-await.js and async-await.test.js files are included in eslintignore as linter does not async-await recognize syntaxes)
 
 
 #### UML

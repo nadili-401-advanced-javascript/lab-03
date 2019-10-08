@@ -1,2 +1,3 @@
 node_modules/**
 async-await.js
+async-await.test.js
