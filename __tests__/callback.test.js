@@ -20,6 +20,7 @@ describe('File Reader Module', () => {
     let file = `../__data__/bad.txt`;
     callbacks(file, (err, data) => {
       expect(err).toBeDefined();
+      expect(data).toBeUndefined();
       done();
     });
   });
