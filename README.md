@@ -9,9 +9,9 @@
 * [travis](https://travis-ci.com/nadili-401-advanced-javascript/lab-03)
 
 ### Modules
-#### `callbacks.js`
-#### `promises.js`
-#### `async-await.js`
+#### 1 `callbacks.js`
+#### 2 `promises.js`
+#### 3 `async-await.js`
 
 All three modules are updating JSON file content 
 * reading from JSON file
@@ -21,10 +21,20 @@ All three modules are updating JSON file content
 
 ### Setup
 #### Running the app
-* `node index.js <path to your file>`
+* `node index.js <path to your file> <processing module>`  
+##### Example: 
+
+`node index.js __data__/person.json 1` 
+
+##### Processing module can be:
+
+* '1' - callbacks
+* '2' - promises
+* '3' - async-await
+
 
 ### Limitations 
-* input has to have three arguments in order for app run properly
+* input has to have exactly four arguments in order for app run properly
 * file have to be valid json
 
   

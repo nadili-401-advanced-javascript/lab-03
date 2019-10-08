@@ -4,32 +4,36 @@ const callbacks = require('./lib/callbacks.js');
 const promises = require('./lib/promises.js');
 const async = require('./lib/async-await.js');
 
-// debug
-//let file = `__data__/person.json`;
+// debug files
+// let file = `__data__/person.json`;
+// let file1 = `__data__/person-promise.json`;
+// let file2 = `__data__/person-async.json`;
 
 // File from console input
-let args = process.argv.slice(2, 3);
-let file = args[0];
-console.log(file);
+let args = process.argv;
+if (args.length < 4){
+  console.log('ERROR: Wrong number of arguments: Use \'node index.js <path_to_file> < 1, 2 or 3 for type_of_file_processing>');
+} else {
+  let file = args[2];
+  let type = args[3];
+  console.log(file);
 
-// A simple error first callback that regurgitates our file contents
-let showFileContents = (err,data) => {
-  if(err) { throw err; }
-  console.log(data);
-};
-  
-// Use our custom file reader instead of normal fs, so that we can change our interface to it ...
-// Invoke our file reader.  Note that the "reader" module is expected to simply export a function, not an object
-// We should be able to call it directly with a file and any callback we like.
-  
-callbacks (file, showFileContents);
-  
-// Using our custom reader as a promise ...
-//   fileReader( file )
-//     .then( contents => showFileContents(null, contents ) )
-//     .catch( showFileContents );
-  
+  let showFileContents = (err, data) => {
+    if(err) { throw err; }
+    console.log(data);
+  };
 
+  if (type === '1'){  
+    callbacks (file, showFileContents);
+  } else if (type === '2'){
+    promises(file);
+  } else if (type === '3'){
+    async(file);
+  } else {
+    console.log('ERROR: Wrong trype of file processing. Please use \'1\' for callbacks \'2\' for promises, \'3\' for async-await');
+  }
+  
+}
 
 
 
