@@ -22,9 +22,6 @@ All three modules are updating JSON file content
 ### Setup
 #### Running the app
 * `node index.js <path to your file> <processing module>`  
-##### Example: 
-
-`node index.js __data__/person.json 1` 
 
 ##### Processing module can be:
 
@@ -32,6 +29,11 @@ All three modules are updating JSON file content
 * '2' - promises
 * '3' - async-await
 
+##### Correct ways to run app: 
+
+`node index.js __data__/person.json 1` 
+`node index.js __data__/person.json 2`
+`node index.js __data__/person.json 2`  
 
 ### Limitations 
 * input has to have exactly four arguments in order for app run properly
