@@ -15,7 +15,7 @@ describe('File Reader Module', () => {
   });
 
   it('when given a real file, returns the contents', async () => {
-    let file = `../__data__/person2.json`;
+    let file = `../__data__/person.json`;
    await async(file, (err, data) => {
       expect(err).toBeUndefined();
       expect(typeof data).toBe('string');
