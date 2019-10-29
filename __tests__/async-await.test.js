@@ -2,21 +2,21 @@
 
 jest.mock('fs');
 
-const async = require('../lib/async-await.js');
+const asyncFunc = require('../lib/async-await.js');
 
 describe('File Reader Module', () => {
 
-  it('when given a bad file, returns an error', async () => {
+  it('when given a bad file, returns an error',  () => {
     let file = `../__data__/bad.txt`;
-   await async(file, (err, data) => {
+    asyncFunc(file, (err, data) => {
       expect(err).toBeDefined();
       expect(data).toBeUndefined();
     });
   });
 
-  it('when given a real file, returns the contents', async () => {
+  it('when given a real file, returns the contents', () => {
     let file = `../__data__/person.json`;
-   await async(file, (err, data) => {
+    asyncFunc(file, async (err, data) => {
       expect(err).toBeUndefined();
       expect(typeof data).toBe('string');
     });
