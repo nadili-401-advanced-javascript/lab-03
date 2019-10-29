@@ -20,13 +20,13 @@ async function readFile1(file) {
  * @param  {} stringData
  * @param  {} data
  */
-module.exports = exports = async (file) => { 
+module.exports = exports = (file) => { 
     let data = await readFile1(file);
-    let objData = await JSON.parse(data.toString().trim());
-    console.log('Data from File', objData);  
-    updateObj(objData);
-    data = await JSON.stringify(objData).toString('hex');
-    await writeFile(file, data);
+    let stringData = JSON.parse(data.toString().trim());
+   console.log('Data from async-await module', stringData);
+    await updateObj (data);
+    data = await JSON.stringify(data).toString('hex');
+    data = writeFile(file, data);
     console.log('File saved with promisify!')
     data =  await readFile(file); 
     data = await JSON.parse(data.toString().trim());
